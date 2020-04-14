@@ -1,0 +1,87 @@
+$color-purple: #4e3253;
+$color-red: #f8333c;
+$color-maroon: #6d1b36;
+
+$color-black: #1e2120;
+$color-white: #f7f4f3;
+
+$font-primary: 'Montserrat', sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: $font-primary;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $color-black;
+  color: $color-white;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 7rem);
+  grid-template-rows: minmax(15rem auto), repeat(5, 10rem);
+}
+
+.grid > button {
+  font-size: 1.6rem;
+  padding: 1rem;
+  background-color: $color-purple;
+  border: 1px solid $color-black;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($color-purple, 6);
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.number {
+  color: $color-white;
+}
+
+.symbol {
+  color: $color-red;
+  font-weight: 400;
+}
+
+.multiply {
+  transform: translateY(-3px);
+}
+
+.two-column {
+  grid-column: span 2;
+}
+#displayScreen {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  border: 1px solid $color-black;
+  padding: 10px;
+  height: 7rem;
+  background-color: $color-maroon;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.previous-operator {
+  font-size: 1.3rem;
+}
+.current-operator {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
